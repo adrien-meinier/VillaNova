@@ -45,16 +45,26 @@ p, a, input, select, button {
   padding: 1rem;
 }
 .header__top {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
 }
-.header__logo {
-  font-family: "Poppins", sans-serif;
-}
-.header__toggle {
-  font-size: 2rem;
+.header__burger {
+  font-size: 1.8rem;
   color: white;
+}
+.header__brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+}
+.header__logo {
+  width: 30px;
 }
 .header__nav {
   display: none;
@@ -70,39 +80,70 @@ p, a, input, select, button {
 }
 
 @media (min-width: 768px) {
-  .header__toggle {
+  .header__burger {
     display: none;
   }
   .header__nav {
     display: block;
+    margin-top: 0;
   }
   .header__list {
     flex-direction: row;
     justify-content: flex-end;
     gap: 2rem;
   }
+  .header__brand {
+    justify-content: flex-start;
+  }
 }
+.search {
+  padding: 1rem;
+}
+.search input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background: #ABC2CB;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem;
+  overflow-x: auto;
+}
+.filters__btn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: #ABC2CB;
+  white-space: nowrap;
+}
+.filters .active {
+  background: #152732;
+  color: white;
+}
+
 .events {
   padding: 1rem;
 }
+.events h2 {
+  margin-bottom: 1rem;
+}
 .events__grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 .card {
-  background: #ABC2CB;
+  background: white;
   border-radius: 10px;
   overflow: hidden;
-  transition: 0.2s;
 }
-.card:hover {
-  transform: translateY(-3px);
-}
-.card__image img {
+.card img {
   width: 100%;
-  height: 180px;
+  height: 160px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -123,4 +164,10 @@ p, a, input, select, button {
   .events__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #152732;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

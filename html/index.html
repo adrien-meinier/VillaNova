@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Villa Nova - Accueil</title>
+  <title>VillaNova</title>
 
   <link rel="stylesheet" href="../css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Open+Sans&display=swap" rel="stylesheet">
@@ -14,11 +14,16 @@
 <header class="header">
 
   <div class="header__top">
-    <h1 class="header__logo">Villa Nova</h1>
 
-    <button class="header__toggle" aria-label="Menu" aria-expanded="false">
+    <button class="header__burger" aria-label="Menu">
       ☰
     </button>
+
+    <div class="header__brand">
+      <h1 class="header__title">VillaNova</h1>
+      <img class="header__logo" src="../img/logo.png" alt="Logo VillaNova">
+    </div>
+
   </div>
 
   <nav class="header__nav">
@@ -34,39 +39,38 @@
 
 <main>
 
-  <section>
-    <h2>Filtres</h2>
+  <section class="search">
+    <input type="search" placeholder="Rechercher (lieu, prix...)" />
+  </section>
 
-    <input type="search" placeholder="Rechercher un événement">
-
-    <select>
-      <option>Tous</option>
-      <option>Gratuit</option>
-      <option>Payant</option>
-    </select>
-
+  <section class="filters">
+    <button class="filters__btn active">Tous</button>
+    <button class="filters__btn">Spectacles</button>
+    <button class="filters__btn">Concerts</button>
+    <button class="filters__btn">Expositions</button>
   </section>
 
   <section class="events">
-
     <h2>Événements</h2>
 
     <div class="events__grid">
 
       <article class="card">
-        <a href="evenement.html">
-          <img src="../img/concert.jpg" alt="Concert jazz" loading="lazy">
+        <img src="../img/concert.jpg" alt="Concert jazz" loading="lazy">
+        <div class="card__content">
           <h3>Concert Jazz</h3>
-          <p>Place centrale - Gratuit</p>
-        </a>
+          <p>Place centrale</p>
+          <p class="card__price">Gratuit</p>
+        </div>
       </article>
 
       <article class="card">
-        <a href="evenement.html">
-          <img src="../img/expo.jpg" alt="Expo moderne" loading="lazy">
+        <img src="../img/expo.jpg" alt="Exposition moderne" loading="lazy">
+        <div class="card__content">
           <h3>Expo Moderne</h3>
-          <p>Musée - 8€</p>
-        </a>
+          <p>Musée</p>
+          <p class="card__price">8€</p>
+        </div>
       </article>
 
     </div>
@@ -75,13 +79,16 @@
 
 </main>
 
+<footer class="footer">
+  <p>© 2026 VillaNova</p>
+</footer>
+
 <script>
 const header = document.querySelector('.header');
-const btn = document.querySelector('.header__toggle');
+const burger = document.querySelector('.header__burger');
 
-btn.addEventListener('click', () => {
-  const open = header.classList.toggle('is-open');
-  btn.setAttribute('aria-expanded', open);
+burger.addEventListener('click', () => {
+  header.classList.toggle('is-open');
 });
 </script>
 

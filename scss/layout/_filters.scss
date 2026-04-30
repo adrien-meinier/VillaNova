@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem;
+  overflow-x: auto;
+
+  &__btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: $color-secondary-light;
+    white-space: nowrap;
+  }
+
+  .active {
+    background: $color-primary;
+    color: white;
+  }
+}
