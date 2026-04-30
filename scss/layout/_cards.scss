@@ -2,26 +2,22 @@
 
 .events {
   padding: 1rem;
+}
 
-  h2 {
-    margin-bottom: 1rem;
-  }
-
-  &__grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-  }
+.events__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 .card {
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
 
   img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
   }
 
@@ -29,9 +25,23 @@
     padding: 1rem;
   }
 
+  &__badge {
+    position: absolute;
+    background: $color-primary;
+    color: white;
+    padding: .3rem .6rem;
+    font-size: .8rem;
+    border-radius: 20px;
+  }
+
+  &__meta {
+    font-size: .8rem;
+    color: $color-secondary;
+  }
+
   &__price {
-    color: $color-primary;
     font-weight: bold;
+    color: $color-primary;
   }
 }
 

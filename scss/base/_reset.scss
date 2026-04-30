@@ -9,7 +9,8 @@
 body {
   font-family: $font-text;
   background: #fff;
-  color: #000;
+  color: $color-primary;
+  line-height: 1.5;
 }
 
 a {
@@ -19,10 +20,4 @@ a {
 
 ul {
   list-style: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
 }

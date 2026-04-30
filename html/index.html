@@ -1,96 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VillaNova</title>
-
-  <link rel="stylesheet" href="../css/main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Open+Sans&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VillaNova</title>
+<link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
 
 <header class="header">
-
   <div class="header__top">
-
-    <button class="header__burger" aria-label="Menu">
-      ☰
-    </button>
+    <button class="header__burger">☰</button>
 
     <div class="header__brand">
       <h1 class="header__title">VillaNova</h1>
-      <img class="header__logo" src="../img/logo.png" alt="Logo VillaNova">
+      <img class="header__logo" src="../img/logo.png">
     </div>
-
   </div>
 
   <nav class="header__nav">
     <ul class="header__list">
       <li><a href="index.html">Accueil</a></li>
-      <li><a href="mes-evenements.html">Mes événements</a></li>
+      <li><a href="mes_evenements.html">Mes événements</a></li>
       <li><a href="login.html">Connexion</a></li>
       <li><a href="inscription.html">Inscription</a></li>
     </ul>
   </nav>
-
 </header>
 
 <main>
 
-  <section class="search">
-    <input type="search" placeholder="Rechercher (lieu, prix...)" />
-  </section>
+<section class="search">
+  <input type="search" placeholder="Rechercher un événement">
+</section>
 
-  <section class="filters">
-    <button class="filters__btn active">Tous</button>
-    <button class="filters__btn">Spectacles</button>
-    <button class="filters__btn">Concerts</button>
-    <button class="filters__btn">Expositions</button>
-  </section>
+<section class="filters">
+  <button class="filters__btn active">Tous</button>
+  <button class="filters__btn">Concerts</button>
+  <button class="filters__btn">Expositions</button>
+</section>
 
-  <section class="events">
-    <h2>Événements</h2>
+<section class="events">
+  <div class="events__grid">
 
-    <div class="events__grid">
+    <article class="card">
+      <img src="../img/concert.jpg">
+      <div class="card__content">
+        <h3>Jazz Night</h3>
+        <p class="card__price">Gratuit</p>
+      </div>
+    </article>
 
-      <article class="card">
-        <img src="../img/concert.jpg" alt="Concert jazz" loading="lazy">
-        <div class="card__content">
-          <h3>Concert Jazz</h3>
-          <p>Place centrale</p>
-          <p class="card__price">Gratuit</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="../img/expo.jpg" alt="Exposition moderne" loading="lazy">
-        <div class="card__content">
-          <h3>Expo Moderne</h3>
-          <p>Musée</p>
-          <p class="card__price">8€</p>
-        </div>
-      </article>
-
-    </div>
-
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <p>© 2026 VillaNova</p>
+  <p>© 2026 VillaNova - Tous droits réservés</p>
 </footer>
-
-<script>
-const header = document.querySelector('.header');
-const burger = document.querySelector('.header__burger');
-
-burger.addEventListener('click', () => {
-  header.classList.toggle('is-open');
-});
-</script>
 
 </body>
 </html>

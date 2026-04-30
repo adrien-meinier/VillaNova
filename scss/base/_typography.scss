@@ -2,14 +2,12 @@
 
 h1 {
   font-family: $font-h1;
-  color: $color-primary;
 }
 
 h2 {
   font-family: $font-h2;
-  color: $color-secondary-dark;
 }
 
-p, a, input, select, button {
+p, a, button, input {
   font-family: $font-text;
 }
