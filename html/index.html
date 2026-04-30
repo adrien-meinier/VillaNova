@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Nova - Accueil</title>
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="header__top">
+    <h1 class="header__logo">Villa Nova</h1>
+
+    <button class="header__toggle" aria-label="Menu" aria-expanded="false">
+      ☰
+    </button>
+  </div>
+
+  <nav class="header__nav">
+    <ul class="header__list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="mes-evenements.html">Mes événements</a></li>
+      <li><a href="login.html">Connexion</a></li>
+      <li><a href="inscription.html">Inscription</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+
+  <section>
+    <h2>Filtres</h2>
+
+    <input type="search" placeholder="Rechercher un événement">
+
+    <select>
+      <option>Tous</option>
+      <option>Gratuit</option>
+      <option>Payant</option>
+    </select>
+
+  </section>
+
+  <section class="events">
+
+    <h2>Événements</h2>
+
+    <div class="events__grid">
+
+      <article class="card">
+        <a href="evenement.html">
+          <img src="../img/concert.jpg" alt="Concert jazz" loading="lazy">
+          <h3>Concert Jazz</h3>
+          <p>Place centrale - Gratuit</p>
+        </a>
+      </article>
+
+      <article class="card">
+        <a href="evenement.html">
+          <img src="../img/expo.jpg" alt="Expo moderne" loading="lazy">
+          <h3>Expo Moderne</h3>
+          <p>Musée - 8€</p>
+        </a>
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+const header = document.querySelector('.header');
+const btn = document.querySelector('.header__toggle');
+
+btn.addEventListener('click', () => {
+  const open = header.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', open);
+});
+</script>
+
+</body>
+</html>
