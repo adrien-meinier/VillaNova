@@ -1,65 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VillaNova</title>
-<link rel="stylesheet" href="../css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VillaNova - Événements</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header class="header">
-  <div class="header__top">
-    <button class="header__burger">☰</button>
+  <h1>VillaNova</h1>
 
-    <div class="header__brand">
-      <h1 class="header__title">VillaNova</h1>
-      <img class="header__logo" src="../img/logo.png">
-    </div>
-  </div>
-
-  <nav class="header__nav">
-    <ul class="header__list">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="mes_evenements.html">Mes événements</a></li>
-      <li><a href="login.html">Connexion</a></li>
-      <li><a href="inscription.html">Inscription</a></li>
-    </ul>
-  </nav>
+  <label for="searchInput" class="sr-only">Rechercher un événement</label>
+  <input 
+    type="search" 
+    id="searchInput"
+    placeholder="Rechercher un événement..."
+    aria-label="Rechercher un événement"
+  >
 </header>
 
 <main>
 
-<section class="search">
-  <input type="search" placeholder="Rechercher un événement">
-</section>
+  <section class="events" aria-labelledby="events-title">
+    <h2 id="events-title" class="sr-only">Liste des événements</h2>
 
-<section class="filters">
-  <button class="filters__btn active">Tous</button>
-  <button class="filters__btn">Concerts</button>
-  <button class="filters__btn">Expositions</button>
-</section>
-
-<section class="events">
-  <div class="events__grid">
-
-    <article class="card">
-      <img src="../img/concert.jpg">
-      <div class="card__content">
-        <h3>Jazz Night</h3>
-        <p class="card__price">Gratuit</p>
-      </div>
-    </article>
-
-  </div>
-</section>
+    <div 
+      id="eventsContainer" 
+      class="events-grid"
+      aria-live="polite"
+    >
+      <!-- événements injectés via API -->
+    </div>
+  </section>
 
 </main>
 
-<footer class="footer">
-  <p>© 2026 VillaNova - Tous droits réservés</p>
+<footer class="footer" role="contentinfo">
+  <p>© 2026 VillaNova — Tous droits réservés</p>
+  <p>Projet étudiant — OpenAgenda API</p>
 </footer>
+
+<script type="module" src="js/app.js"></script>
 
 </body>
 </html>

@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connexion</title>
+<title>Connexion - VillaNova</title>
 <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
 
-<header class="header">...</header>
+<header class="header">
+  <h1>VillaNova</h1>
+</header>
 
 <main class="auth">
 
-<h1>Connexion</h1>
+  <h2>Connexion</h2>
 
-<form>
-  <input type="email" placeholder="Email">
-  <input type="password" placeholder="Mot de passe">
-  <button>Se connecter</button>
-</form>
+  <form>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required autocomplete="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" name="password" required autocomplete="current-password">
+    </div>
+
+    <button type="submit">Se connecter</button>
+
+  </form>
 
 </main>
 
-<footer class="footer"></footer>
+<footer class="footer" role="contentinfo">
+  <p>© 2026 VillaNova — Tous droits réservés</p>
+</footer>
 
 </body>
 </html>

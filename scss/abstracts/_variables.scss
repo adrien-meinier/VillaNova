@@ -1,9 +1,45 @@
-$color-primary: #152732;
-
-$color-secondary-light: #ABC2CB;
+// COLORS
+$color-primary: #ABC2CB;
 $color-secondary: #6B8994;
-$color-secondary-dark: #31566C;
+$color-accent: #31566C;
+$color-dark: #152732;
 
-$font-h1: 'Poppins', sans-serif;
-$font-h2: 'Roboto', sans-serif;
-$font-text: 'Open Sans', sans-serif;
+$color-white: #ffffff;
+$color-black: #111111;
+$color-gray: #d9d9d9;
+
+
+// TYPOGRAPHY
+
+$font-heading: 'Roboto', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+$font-ui: 'Poppins', sans-serif;
+
+
+// FONT SIZES
+
+$font-sm: 0.875rem;
+$font-md: 1rem;
+$font-lg: 1.25rem;
+$font-xl: 2rem;
+
+
+// =========================
+// SPACING
+// =========================
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+
+
+// BORDER RADIUS
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// SHADOWS
+
+$shadow-card: 0 4px 10px rgba(0, 0, 0, 0.2);
