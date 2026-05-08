@@ -1,3 +1,4 @@
+// app.js
 import { fetchEvents } from "./api.js";
 import { displayEvents } from "./ui.js";
 import { searchEvents } from "./filters.js";
@@ -6,28 +7,41 @@ let allEvents = [];
 
 async function init() {
 
-  allEvents = await fetchEvents();
+  const container = document.getElementById("eventsContainer");
+  if (container) container.setAttribute("aria-busy", "true");
 
-  console.log(allEvents); // 👈 DEBUG IMPORTANT
+  try {
 
-  displayEvents(allEvents);
+    allEvents = await fetchEvents();
 
+    displayEvents(allEvents);
+
+  } catch (err) {
+    console.error(err);
+  } finally {
+    if (container) container.setAttribute("aria-busy", "false");
+  }
 }
 
 init();
 
-// sécurité DOM
-const searchInput = document.getElementById("searchInput");
+// SEARCH (debounce)
+const input = document.getElementById("searchInput");
 
-if (searchInput) {
+if (input) {
 
-  searchInput.addEventListener("input", (e) => {
+  let timer;
 
-    const filteredEvents =
-      searchEvents(allEvents, e.target.value);
+  input.addEventListener("input", (e) => {
 
-    displayEvents(filteredEvents);
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+
+      const filtered = searchEvents(allEvents, e.target.value);
+      displayEvents(filtered);
+
+    }, 200);
 
   });
-
 }

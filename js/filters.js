@@ -1,12 +1,22 @@
-export function searchEvents(events, searchTerm) {
+// filters.js
+export function searchEvents(events, query = "") {
 
-  return events.filter(event => {
+  const q = query.toLowerCase().trim();
 
-    const title =
-      event.title?.fr?.toLowerCase() || "";
+  if (!q) return events;
 
-    return title.includes(searchTerm.toLowerCase());
+  return events.filter(e => {
 
+    const title = e.title?.fr?.toLowerCase() || "";
+    const desc = e.description?.fr?.toLowerCase() || "";
+    const city = e.location?.city?.toLowerCase() || "";
+    const source = e.source?.toLowerCase() || "";
+
+    return (
+      title.includes(q) ||
+      desc.includes(q) ||
+      city.includes(q) ||
+      source.includes(q)
+    );
   });
-
 }

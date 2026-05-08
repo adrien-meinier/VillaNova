@@ -6,8 +6,10 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #fff;
-  color: #000;
+  background-color: #152732;
+  color: #ffffff;
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
 a {
@@ -19,52 +21,57 @@ ul {
   list-style: none;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
+:focus-visible {
+  outline: 3px solid #ABC2CB;
+  outline-offset: 3px;
 }
 
-h1 {
-  font-family: "Poppins", sans-serif;
-  color: #152732;
-}
-
-h2 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Roboto", sans-serif;
-  color: #31566C;
+  line-height: 1.2;
+  color: #ffffff;
 }
 
-p, a, input, select, button {
+p,
+a,
+button,
+input {
   font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
 }
 
 .header {
-  background: #152732;
-  color: white;
-  padding: 1rem;
+  background: #31566C;
+  color: #ffffff;
+  padding: 1.5rem;
 }
 .header__top {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .header__burger {
   font-size: 1.8rem;
-  color: white;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
 }
-.header__brand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+.header__burger:focus-visible {
+  outline: 3px solid #ABC2CB;
+  outline-offset: 3px;
 }
 .header__title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-}
-.header__logo {
-  width: 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
 }
 .header__nav {
   display: none;
@@ -78,7 +85,6 @@ p, a, input, select, button {
 .header.is-open .header__nav {
   display: block;
 }
-
 @media (min-width: 768px) {
   .header__burger {
     display: none;
@@ -90,21 +96,17 @@ p, a, input, select, button {
   .header__list {
     flex-direction: row;
     justify-content: flex-end;
-    gap: 2rem;
-  }
-  .header__brand {
-    justify-content: flex-start;
   }
 }
+
 .search {
   padding: 1rem;
 }
 .search input {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.5rem;
   border-radius: 8px;
   border: none;
-  background: #ABC2CB;
 }
 
 .filters {
@@ -115,59 +117,104 @@ p, a, input, select, button {
 }
 .filters__btn {
   padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background: #ABC2CB;
+  border-radius: 999px;
+  background: #6B8994;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
   white-space: nowrap;
+  font-family: "Poppins", sans-serif;
 }
-.filters .active {
-  background: #152732;
-  color: white;
+.filters__btn:hover {
+  background: #31566C;
 }
-
-.events {
-  padding: 1rem;
+.filters__btn:focus-visible {
+  outline: 3px solid #ABC2CB;
+  outline-offset: 3px;
 }
-.events h2 {
-  margin-bottom: 1rem;
-}
-.events__grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.card img {
-  width: 100%;
-  height: 160px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card__content {
-  padding: 1rem;
-}
-.card__price {
+.filters__btn--active {
+  background: #ABC2CB;
   color: #152732;
-  font-weight: bold;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 @media (min-width: 768px) {
-  .events__grid {
+  .events-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1024px) {
-  .events__grid {
+  .events-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.card {
+  background-color: #ABC2CB;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card:focus-visible {
+  outline: 3px solid #ABC2CB;
+  outline-offset: 3px;
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card .badge {
+  background: #31566C;
+  color: #ffffff;
+  font-size: 0.875rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.card h2 {
+  font-size: 1.25rem;
+  font-family: "Roboto", sans-serif;
+  color: #152732;
+}
+.card p {
+  font-size: 0.875rem;
+  color: #152732;
+  opacity: 0.85;
+}
+.card small {
+  font-size: 0.875rem;
+  color: #152732;
+  opacity: 0.6;
+}
+
 .footer {
   text-align: center;
-  padding: 1rem;
-  background: #152732;
-  color: white;
+  padding: 1.5rem;
+  background-color: #31566C;
+  color: #ffffff;
+}
+.footer p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
 }/*# sourceMappingURL=main.css.map */

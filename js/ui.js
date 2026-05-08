@@ -1,79 +1,59 @@
-
+// ui.js
 export function displayEvents(events) {
 
   const container = document.getElementById("eventsContainer");
+  if (!container) return;
 
   container.innerHTML = "";
 
-  if (!events || !Array.isArray(events)) {
-    container.innerHTML = "<p>Aucun événement disponible</p>";
+  if (!events.length) {
+    container.innerHTML = `<p role="status">Aucun événement trouvé</p>`;
     return;
   }
 
-  // suppression des doublons (robuste)
-  const uniqueEvents = [...new Map(
-    events
-      .filter(e => e && e.uid)
-      .map(event => [event.uid, event])
-  ).values()];
+  const unique = [...new Map(events.map(e => [e.uid, e])).values()];
 
-  uniqueEvents.forEach(event => {
+  unique.forEach(event => {
 
-    // TITRE
     const title = event.title?.fr || "Sans titre";
 
-    // DESCRIPTION (OpenAgenda varie souvent)
-    const description =
-      event.description?.fr ||
-      event.description ||
-      "Pas de description disponible";
-
-    // IMAGE (ultra safe)
     const image =
       event.image?.base ||
       event.image?.thumb ||
-      event.image?.url ||
       "./assets/images/default.jpg";
 
-    // VILLE / LIEU
-    const city =
-      event.location?.city ||
-      event.location?.address ||
-      "Ville inconnue";
+    const city = event.location?.city || "Ville inconnue";
 
-    //  DATE
     const date =
       event.firstDate ||
       event.timings?.[0]?.begin ||
-      "";
+      "Date inconnue";
 
-    // CARD HTML
-    const card = document.createElement("div");
-    card.classList.add("card");
+    const card = document.createElement("article");
+
+    card.className = "card";
+    card.tabIndex = 0;
+    card.setAttribute("role", "link");
+    card.setAttribute("aria-label", title);
+
+    const go = () => {
+      window.location.href = `event.html?id=${event.uid}`;
+    };
+
+    card.addEventListener("click", go);
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") go();
+    });
 
     card.innerHTML = `
-      <img src="${image}" alt="${title}">
-
+      <img src="${image}" alt="Image ${title}">
       <div class="content">
-
         <span class="badge">${city}</span>
-
         <h2>${title}</h2>
-
-        <p>${description.slice(0, 90)}...</p>
-
         <small>${date}</small>
-
       </div>
     `;
 
-    // clic vers page détail
-    card.addEventListener("click", () => {
-      window.location.href = `event.html?id=${event.uid}`;
-    });
-
     container.appendChild(card);
-
   });
-
 }
