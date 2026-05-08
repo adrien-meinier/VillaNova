@@ -1,13 +1,23 @@
 @use "../abstracts/variables" as *;
 
-h1 {
-  font-family: $font-h1;
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+  line-height: 1.2;
+  color: $color-text;
 }
 
-h2 {
-  font-family: $font-h2;
+p,
+a,
+button,
+input {
+  font-family: $font-body;
+  line-height: 1.5;
+  color: $color-text;
 }
 
-p, a, button, input {
-  font-family: $font-text;
+button {
+  font-family: $font-ui;
 }

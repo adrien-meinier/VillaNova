@@ -8,18 +8,22 @@
   background-color: $color-secondary;
   color: $color-white;
   border: none;
-  border-radius: 8px;
-  padding: 0.8rem 1.2rem;
+  border-radius: $radius-sm;
+  padding: $spacing-xs $spacing-sm;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 
-  &:hover,
-  &:focus {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  &:hover {
     background-color: $color-accent;
   }
 
-  &:focus {
-    outline: 3px solid $color-primary;
-    outline-offset: 2px;
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: $focus-outline;
+    outline-offset: $focus-offset;
   }
 }

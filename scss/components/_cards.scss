@@ -1,19 +1,43 @@
 @use "../abstracts/variables" as *;
 
-.events {
-  padding: 1rem;
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-sm;
+  padding: $spacing-sm;
 }
 
-.events__grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+@media (min-width: $breakpoint-md) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
-  background: white;
-  border-radius: 12px;
+  background-color: $color-primary;
+  border-radius: $radius-md;
   overflow: hidden;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:focus-visible {
+    outline: $focus-outline;
+    outline-offset: $focus-offset;
+  }
 
   img {
     width: 100%;
@@ -21,38 +45,37 @@
     object-fit: cover;
   }
 
-  &__content {
-    padding: 1rem;
+  .content {
+    padding: $spacing-sm;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
   }
 
-  &__badge {
-    position: absolute;
-    background: $color-primary;
-    color: white;
-    padding: .3rem .6rem;
-    font-size: .8rem;
-    border-radius: 20px;
+  .badge {
+    background: $color-accent;
+    color: $color-white;
+    font-size: $font-sm;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    width: fit-content;
   }
 
-  &__meta {
-    font-size: .8rem;
-    color: $color-secondary;
+  h2 {
+    font-size: $font-lg;
+    font-family: $font-heading;
+    color: $color-dark;
   }
 
-  &__price {
-    font-weight: bold;
-    color: $color-primary;
+  p {
+    font-size: $font-sm;
+    color: $color-dark;
+    opacity: 0.85;
   }
-}
 
-@media (min-width: 768px) {
-  .events__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .events__grid {
-    grid-template-columns: repeat(3, 1fr);
+  small {
+    font-size: $font-sm;
+    color: $color-dark;
+    opacity: 0.6;
   }
 }

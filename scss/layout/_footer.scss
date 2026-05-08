@@ -1,6 +1,13 @@
+@use "../abstracts/variables" as *;
+
 .footer {
   text-align: center;
-  padding: 1rem;
-  background: $color-primary;
-  color: white;
+  padding: $spacing-md;
+  background-color: $color-accent;
+  color: $color-white;
+
+  p {
+    margin: 0.25rem 0;
+    font-size: $font-sm;
+  }
 }

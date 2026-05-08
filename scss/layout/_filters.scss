@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+
+.filters {
+  display: flex;
+  gap: $spacing-xs;
+  padding: 0 $spacing-sm $spacing-sm;
+  overflow-x: auto;
+
+  &__btn {
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 999px;
+    background: $color-secondary;
+    color: $color-white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: $font-ui;
+
+    &:hover {
+      background: $color-accent;
+    }
+
+    &:focus-visible {
+      outline: $focus-outline;
+      outline-offset: $focus-offset;
+    }
+
+    &--active {
+      background: $color-primary;
+      color: $color-dark;
+    }
+  }
+}

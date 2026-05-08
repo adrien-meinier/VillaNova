@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as *;
+
+.search {
+  padding: $spacing-sm;
+
+  input {
+    width: 100%;
+    padding: $spacing-xs;
+    border-radius: $radius-sm;
+    border: none;
+  }
+}

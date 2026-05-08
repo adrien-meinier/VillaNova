@@ -6,40 +6,40 @@ $color-dark: #152732;
 
 $color-white: #ffffff;
 $color-black: #111111;
-$color-gray: #d9d9d9;
 
+$color-text: #ffffff;
+$color-text-muted: #cfd8dc;
 
 // TYPOGRAPHY
-
 $font-heading: 'Roboto', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 $font-ui: 'Poppins', sans-serif;
 
-
 // FONT SIZES
-
 $font-sm: 0.875rem;
 $font-md: 1rem;
 $font-lg: 1.25rem;
 $font-xl: 2rem;
 
-
-// =========================
 // SPACING
-// =========================
-
 $spacing-xs: 0.5rem;
 $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
 $spacing-lg: 2rem;
 
-
 // BORDER RADIUS
-
 $radius-sm: 8px;
 $radius-md: 12px;
 $radius-lg: 20px;
 
 // SHADOWS
+$shadow-card: 0 6px 16px rgba(0, 0, 0, 0.25);
 
-$shadow-card: 0 4px 10px rgba(0, 0, 0, 0.2);
+// ACCESSIBILITY
+$focus-outline: 3px solid $color-primary;
+$focus-offset: 3px;
+
+// BREAKPOINTS
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
