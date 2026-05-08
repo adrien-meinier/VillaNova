@@ -10,8 +10,18 @@
 
 <body>
 
+<!-- NAVIGATION -->
+<nav class="nav" aria-label="Navigation principale">
+  <a href="index.html" class="nav__logo">VillaNova</a>
+
+  <ul class="nav__links">
+    <li><a href="index.html">Événements</a></li>
+    <li><a href="login.html">Connexion</a></li>
+  </ul>
+</nav>
+
 <header class="header">
-  <h1>VillaNova</h1>
+  <h1>Événements</h1>
 
   <label for="searchInput" class="sr-only">Rechercher un événement</label>
   <input 
@@ -31,9 +41,8 @@
       id="eventsContainer" 
       class="events-grid"
       aria-live="polite"
-    >
-      <!-- événements injectés via API -->
-    </div>
+    ></div>
+
   </section>
 
 </main>

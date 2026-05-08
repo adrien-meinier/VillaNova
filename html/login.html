@@ -10,15 +10,26 @@
 
 <body>
 
+<!-- NAVIGATION -->
+<nav class="nav" aria-label="Navigation principale">
+  <a href="index.html" class="nav__logo">VillaNova</a>
+
+  <ul class="nav__links">
+    <li><a href="index.html">Événements</a></li>
+    <li><a href="login.html" aria-current="page">Connexion</a></li>
+    <li><a href="register.html">Inscription</a></li>
+  </ul>
+</nav>
+
 <header class="header">
-  <h1>VillaNova</h1>
+  <h1>Connexion</h1>
 </header>
 
 <main class="auth">
 
-  <h2>Connexion</h2>
+  <h2 class="sr-only">Formulaire de connexion</h2>
 
-  <form>
+  <form id="loginForm">
 
     <div class="form-group">
       <label for="email">Email</label>
@@ -34,11 +45,18 @@
 
   </form>
 
+  <p class="auth__link">
+    Pas encore inscrit ?
+    <a href="register.html">Créer un compte</a>
+  </p>
+
 </main>
 
 <footer class="footer" role="contentinfo">
   <p>© 2026 VillaNova — Tous droits réservés</p>
 </footer>
+
+<script type="module" src="../js/app.js"></script>
 
 </body>
 </html>

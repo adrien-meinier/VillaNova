@@ -10,6 +10,16 @@
 
 <body>
 
+<!-- NAVIGATION PRINCIPALE -->
+<nav class="nav" aria-label="Navigation principale">
+  <a href="index.html" class="nav__logo">VillaNova</a>
+
+  <ul class="nav__links">
+    <li><a href="index.html">Événements</a></li>
+    <li><a href="login.html">Connexion</a></li>
+  </ul>
+</nav>
+
 <header class="header">
   <a href="index.html" class="back-link">← Retour aux événements</a>
   <h1>Détail de l'événement</h1>
@@ -21,6 +31,7 @@
     id="eventContainer"
     aria-live="polite"
     aria-busy="true"
+    aria-label="Détail de l'événement"
   >
     <!-- contenu injecté OpenAgenda -->
   </section>
